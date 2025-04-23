@@ -13,8 +13,11 @@ class Collection:
         self.card_list.append(self.card_name)
         self.card_quantity += 1
 
-    def edit_card(self):
-        pass
+    def remove_card(self):
+        """This method handles removing a card from the collection of cards."""
+        self.card_name = input("Enter the name of the card to remove: ")
+        self.card_list.remove(self.card_name)
+        self.card_quantity -= 1
 
     def view_list(self):
         """This method handles displaying the list of cards in the collection."""
@@ -29,13 +32,21 @@ class Collection:
 class Card:
     """This class respresents the instance of a card."""
     def __init__(self, quantity, name):
+        self.quantity = quantity
+        self.name = name
+
+    def get_name(self):
+        """This method handles getting the name of a card."""
         pass
 
-
+    def get_quantity(self):
+        """This method handles getting the quantity of a card."""
+        pass
 
 def main():
     """Main loop"""
     collection_object = Collection(card_name="", quantity=0)
+    card_object = Card(quantity=0, name="")
 
     while True:
         print("")
