@@ -2,51 +2,59 @@ import sys
 
 class Collection:
     """This class represents the instance of a collection."""
-    def __init__(self, card_name, quantity):
-        self.card_list = []
-        self.card_quantity = quantity
-        self.card_name = card_name
+    def __init__(self, collection_name, collection_quantity):
+        self.collection_dict = []
+        self.collection_quantity = collection_quantity
+        self.collection_name = collection_name
 
     def add_card(self):
         """This method handles adding a card to the collection of cards."""
-        self.card_name = input("Enter the name of the card to add: ")
-        self.card_list.append(self.card_name)
-        self.card_quantity += 1
+        self.collection_dict.append(Card.get_name(self))
+        self.collection_quantity += 1
+        # Card.get_quantity += 1
 
     def remove_card(self):
         """This method handles removing a card from the collection of cards."""
-        self.card_name = input("Enter the name of the card to remove: ")
-        self.card_list.remove(self.card_name)
-        self.card_quantity -= 1
+        card_name = input("Enter the name of the card to remove: ")
+        self.collection_dict.remove(card_name)
+        self.collection_quantity -= 1
 
     def view_list(self):
         """This method handles displaying the list of cards in the collection."""
-        if self.card_quantity <= 0:
+        if self.collection_quantity <= 0:
             print("There are no cards in this collection, make new selection.")  
         else:
-            print("You have " + str(self.card_quantity) + " cards in your collection:")
-            for item in self.card_list:
+            print("You have " + str(self.collection_quantity) + " cards in your collection:")
+            for item in self.collection_dict:
                 print(item)
 
 
 class Card:
     """This class respresents the instance of a card."""
-    def __init__(self, quantity, name):
-        self.quantity = quantity
-        self.name = name
+    def __init__(self, card_quantity, card_name):
+        self.card_quantity = card_quantity
+        self.card_name = card_name
 
     def get_name(self):
         """This method handles getting the name of a card."""
-        pass
+        name = input("Enter the name of the card to add: ")
+        return name
 
     def get_quantity(self):
         """This method handles getting the quantity of a card."""
+        # return self.card_quantity
         pass
+    
+    def add_quantity(self):
+        self.card_quantity += 1
+
+    def subtract_quantity(self):
+        self.card_quantity -= 1
 
 def main():
     """Main loop"""
-    collection_object = Collection(card_name="", quantity=0)
-    card_object = Card(quantity=0, name="")
+    collection_object = Collection(collection_name="", collection_quantity=0)
+    card_object = Card(card_quantity=0, card_name="")
 
     while True:
         print("")
