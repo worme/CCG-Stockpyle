@@ -9,17 +9,18 @@ class Collection:
 
     def add_card(self):
         """This method handles adding a card to the collection of cards."""
-        self.collection_dict.append(Card.get_name(self))
+        print(Card.get_name(self) + " has been added to the collection.")
+        self.collection_dict.append(Card.get_name(self)) #TODO Make this add {card, quantity} to dict instead of list
         self.collection_quantity += 1
         # Card.get_quantity += 1
 
-    def remove_card(self):
+    def remove_card(self):  #TODO Fix and implement removing card from collection
         """This method handles removing a card from the collection of cards."""
         card_name = input("Enter the name of the card to remove: ")
         self.collection_dict.remove(card_name)
         self.collection_quantity -= 1
 
-    def view_list(self):
+    def view_list(self): #TODO Need to view item and quantity from dict
         """This method handles displaying the list of cards in the collection."""
         if self.collection_quantity <= 0:
             print("There are no cards in this collection, make new selection.")  

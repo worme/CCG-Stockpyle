@@ -1,0 +1,7 @@
+#TODO - Change the collection from list to dict {card name, card quantity}
+#TODO - Fix add and remove card methods so they modify dict
+#TODO - Instead of having to type add everytime, implement loop and enter done/back/exit to go back or quit
+#TODO - Implement - Save collection(s)
+#TODO - Implement - Open and modify existing collection files
+#TODO - Implement - being able to increase and decrease quantity of a card
+#TODO - 
