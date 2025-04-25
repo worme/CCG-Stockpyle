@@ -9,10 +9,16 @@ class Collection:
 
     def add_card(self, card_object):
         """This method handles adding a card to the collection of cards."""
-        print(card_object.get_name() + " has been added to the collection.")
-        self.collection_dict[card_object.get_name()] = card_object.get_quantity()
-        self.collection_quantity += 1
-        print(self.collection_dict)
+        if card_object.get_name() not in self.collection_dict:
+            print(card_object.get_name() + " has been added to the collection.")
+            self.collection_dict[card_object.get_name()] = card_object.get_quantity()
+            self.collection_quantity += 1
+        else:
+            print(card_object.get_name() + " is already in the collection.")
+            print("Increasing the quantity by one.")
+            card_object.card_quantity += 1 #FIXME Quantity not adding properly
+            self.collection_quantity += 1
+        
 
     #FIXME remove_card method
     # def remove_card(self):
@@ -28,7 +34,8 @@ class Collection:
         else:
             print("You have " + str(self.collection_quantity) + " cards in your collection:")
             for item in self.collection_dict:
-                print(item)
+                print(item, self.collection_dict[item])
+                
 
 
 class Card:
@@ -49,9 +56,9 @@ class Card:
         """This method handles getting the quantity of a card."""
         return self.card_quantity
 
-    #FIXME card quantity methods
-    # def add_quantity(self):
-    #     self.card_quantity += 1
+    # FIXME card quantity methods
+    def add_quantity(self):
+        self.card_quantity += 1
 
     # def subtract_quantity(self):
     #     self.card_quantity -= 1
