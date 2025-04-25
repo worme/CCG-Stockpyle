@@ -14,7 +14,7 @@ class Collection:
         self.collection_quantity += 1
         print(self.collection_dict)
 
-    #FIXME Fix and implement removing card from collection
+    #FIXME remove_card method
     # def remove_card(self):
     #     """This method handles removing a card from the collection of cards."""
     #     card_name = input("Enter the name of the card to remove: ")
@@ -48,7 +48,8 @@ class Card:
     def get_quantity(self):
         """This method handles getting the quantity of a card."""
         return self.card_quantity
-        
+
+    #FIXME card quantity methods
     # def add_quantity(self):
     #     self.card_quantity += 1
 

@@ -14,4 +14,12 @@ The purpose of this application is to manage and keep track of my collectible ca
 
 # Phase 2 - GUI
 # Phase 3 - Add more features 
- 
+
+
+
+#TODO:
+# ~~Change the collection from list to dict {card name, card quantity}~~
+# Implement - Remove card methods
+# Instead of having to type add everytime, implement loop and enter done/back/exit to go back or quit
+# Implement - Save collection(s) Implement - Open and modify existing collection files
+# Implement - being able to increase and decrease quantity of a card
