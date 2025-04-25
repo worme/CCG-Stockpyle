@@ -16,9 +16,8 @@ class Collection:
         else:
             print(card_object.get_name() + " is already in the collection.")
             print("Increasing the quantity by one.")
-            card_object.card_quantity += 1 #FIXME Quantity not adding properly
+            self.collection_dict[card_object.get_name()] += 1
             self.collection_quantity += 1
-        
 
     #FIXME remove_card method
     # def remove_card(self):
@@ -57,8 +56,11 @@ class Card:
         return self.card_quantity
 
     # FIXME card quantity methods
-    def add_quantity(self):
-        self.card_quantity += 1
+    def add_quantity(self, number):
+        """"""
+        
+        
+        # return self.card_quantity
 
     # def subtract_quantity(self):
     #     self.card_quantity -= 1
