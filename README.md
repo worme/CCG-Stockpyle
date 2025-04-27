@@ -23,3 +23,8 @@ The purpose of this application is to manage and keep track of my collectible ca
 # Instead of having to type add everytime, implement loop and enter done/back/exit to go back or quit
 # Implement - Save collection(s) Implement - Open and modify existing collection files
 # Implement - being able to increase and decrease quantity of a card
+
+
+# Needs to create a card every time
+# - Take input and pass input to card obj
+# - This is the data to modify
