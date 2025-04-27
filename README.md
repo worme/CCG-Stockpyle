@@ -27,4 +27,4 @@ The purpose of this application is to manage and keep track of my collectible ca
 
 # Needs to create a card every time
 # - Take input and pass input to card obj
-# - This is the data to modify
+# - The card obj will keep track of their own info

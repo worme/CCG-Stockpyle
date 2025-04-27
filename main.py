@@ -6,20 +6,26 @@ class Collection:
         self.collection_list = []
         self.collection_quantity = collection_quantity
 
+# FIXME 
+# - Not adding / displaying quantities correctly
+# - Should "stack" the cards by only having one line for each card and the numbers increase
     def add_card(self, card_object):
-        """This method handles adding a card to the collection of cards."""
-        if card_object.get_name() not in self.collection_list:
-            self.collection_list.append(card_object)
-            self.collection_quantity += 1
-            print(card_object.get_name() + " has been added to the collection.")
+        """This method adds a card object to collection list."""
+        for obj in self.collection_list:
 
-        else:
-            print(card_object.get_name() + " is already in the collection.")
-            print("Increasing the quantity by one.")
-            self.collection_dict[card_object.get_name()] += 1
-            self.collection_quantity += 1
+            if obj != card_object.get_name():
+                self.collection_list.append(card_object)
+                self.collection_quantity += 1
+                print(card_object.get_name() + " has been added to the collection.")
 
-    #FIXME remove_card method
+            else:
+                print(card_object.get_name() + " is already in the collection.")
+                print("Increasing the quantity by one.")
+                card_object.get_quantity += 1
+                self.collection_quantity += 1
+
+#FIXME 
+# - Needs to be reviewed / tested / debugged after latest changes
     def delete_card(self, card_object):
         """This method handles removing a card from the collection of cards."""   
         if card_object.get_name() in self.collection_dict:
@@ -28,6 +34,10 @@ class Collection:
         else:
             print("That card is not in the collection.")
             print("Make a different selection.")
+
+#FIXME 
+# - Not displaying the correct numbers / info
+# - Needs to be reviewed / tested / debugged            
     def view_list(self):
         """This method handles displaying the list of cards in the collection."""
         if self.collection_quantity <= 0:
